@@ -1,0 +1,7 @@
+#!/bin/sh
+: ${SIZE:=1024}
+: ${OUTFILE:=/testfile}
+dd if=/dev/zero of=$OUTFILE bs=1M count=$SIZE
+sync
+echo "Wrote ${SIZE}MB to $OUTFILE"
+while :; do sleep 2073600; done
